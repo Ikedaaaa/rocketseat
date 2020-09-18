@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascripto</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="nome">
+        <button id="add">Adicionar</button>
+    </div>
+    <div class="lista">
+        <ul id="preenche">
+
+        </ul>
+    </div>
+
+    <script>
+        var btn = document.querySelector('button#add');
+        btn.onclick = function () {
+            var nome = document.querySelector('#nome');
+            adiciona(nome.value);
+            document.querySelector('#nome').value = '';
+        }
+
+
+        function adiciona(nome) {
+            var lista = document.querySelector('#preenche');
+            var item = document.createElement('li');
+            
+            item.innerHTML += nome;
+            lista.appendChild(item);
+
+        }
+    </script>
+</body>
+
+</html>

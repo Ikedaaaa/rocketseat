@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Curso de Javascript</title>
+</head>
+
+<body>
+    <div id="botao">
+        <button class="btn">Criar caixas</button>
+    </div>
+    <div id="caixas"></div>
+
+    <script>
+        var botao = document.querySelector('button.btn');
+        var j = 0;
+        var i = 'a';
+        var sla;
+        botao.onclick = function () {
+            j += 1;
+            sla = i+j;
+
+            var criarCaixas = document.createElement('div');
+            criarCaixas.setAttribute('id', sla);
+            criarCaixas.setAttribute('onmouseover', 'getId(this.id)');
+            criarCaixas.setAttribute('style', 'width: 100px; height: 100px; margin-bottom: 10px; background-color: black');
+
+            var posicionaCaixa = document.querySelector('#caixas');
+            posicionaCaixa.appendChild(criarCaixas);
+        }
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function getId(id) {
+            var Cdi = id;
+            var quadrados = document.querySelector('div#caixas div#'+Cdi);
+            var newColor = getRandomColor();
+            quadrados.setAttribute('style', 'width: 100px; height: 100px; margin-bottom: 10px; background-color:' + newColor);
+            
+        }
+
+    </script>
+</body>
+
+</html>
