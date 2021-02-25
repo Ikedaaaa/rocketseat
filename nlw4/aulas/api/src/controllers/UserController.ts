@@ -27,6 +27,7 @@ class UserController{
 
         return response.json(user);
     }
+    // Não incluído na aula, fiz por conta própria
     async list(request: Request, response: Response){
         const usersRepository = getRepository(User);
 
