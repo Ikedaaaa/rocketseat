@@ -10,14 +10,14 @@ const app = express();
 //http://localhost:3333/users
 app.get('/users', (request, response) => {
     //return response.send("Vai se fuder")
-    return response.json({message: "Pau no seu cu"})
+    return response.json({message: "Olá, é o início da NLW"})
 })
 
 app.post('/', (request, response) => {
-    return response.json({message: "Dado salvo, vadia"})
+    return response.json({message: "Dados salvos, senhor(a)"})
 })
 
-app.listen(3333, () => console.log("Chupa meu pau!"));
+app.listen(3333, () => console.log("Positivo e operante!"));
 
 /*
 GET => Buscar
