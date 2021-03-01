@@ -10,7 +10,7 @@ interface Variables {
     name: string,
     title: string,
     description: string,
-    user_id: string,
+    id: string,
     link: string
 }
 
