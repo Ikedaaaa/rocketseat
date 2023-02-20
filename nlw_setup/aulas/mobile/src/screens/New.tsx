@@ -20,9 +20,9 @@ export function New(){
     };
 
     async function handleCreateNewHabit(){
-        try {
+        try { // Usaram return, eu vou deixar o if / else pois acho que chega no mesmo resultado
             if (!title.trim() || weekDays.length === 0){
-                Alert.alert('Novo Hábito', 'Informe o nome do hábito e escolha a periodicidade')
+                /* return */Alert.alert('Novo Hábito', 'Informe o nome do hábito e escolha a periodicidade')
             } else {
                 await api.post('habits', {title, weekDays});
 
@@ -33,7 +33,7 @@ export function New(){
             }
         } catch (error) {
             console.log(error);
-            Alert.alert('Ops', 'Deu erro')
+            Alert.alert('Ops, deu ruim', 'Não foi possível criar um novo hábito')
         }
     } 
 
