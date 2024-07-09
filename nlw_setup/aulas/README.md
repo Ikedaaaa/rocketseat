@@ -12,16 +12,18 @@ Cada quadrado representa um dia e os hábitos são criados para serem realizados
 ### Achei necessário
     Abaixo segue uma lista das pendências na web que eu achei necessário finalizar para ficar de acordo com meu gosto (Itens também presentes em HabitDay.tsx e HabitsList.tsx da web):
 
- - Separar em componente Checkbox.Root em um componente a parte
- - Em HabitDay.tsx da web: Criar condição para destacar o dia atual e também quando todos os hábitos forem completos, como fiz no mobile
- - Procurar exatamente qual seria a tonalidade para "Ouro"
- - tentar colocar ScrollView ao redor do componente <HabitsList />, pois com muitos hábitos, sai da tela
- - Tentar jogar todas as propriedades de focus em uma propriedade só, pois estão se repetindo muito no código:
+ - (Talvez tenha dado colateral) (Feito) Separar em componente Checkbox.Root em um componente a parte
+ - (Feito) Em HabitDay.tsx da web: Criar condição para destacar o dia atual e também quando todos os hábitos forem completos, como fiz no mobile
+ - (Feito) Procurar exatamente qual seria a tonalidade para "Ouro": {Achei as cores e criei no config do tailwind (gold: '#FFD700', goldenrod: '#daa520'), mas não ficaram muito legal}
+ - (Pulado, pois o próprio Popover não está preparado para isso: https://github.com/radix-ui/primitives/discussions/1081) tentar colocar ScrollView ao redor do componente <HabitsList />, pois com muitos hábitos, sai da tela
+ - (Acho que vou pular) Tentar jogar todas as propriedades de focus em uma propriedade só, pois estão se repetindo muito no código:
     - (focus:outline-none - nos checkboxes ela não é usada) focus:ring-2 focus:ring-violet-600 focus:ring-offset-2 focus:ring-offset-background
     - Talvez criar uma propriedade css do tailwind recebendo todos os outros, e mais uma concatenando o focus:outline-none
  - Seguir o exemplo do mobile de criar componente <HabitsEmpty /> para quando não houver hábitos no dia.
  - Seguir exemplo do mobile de indicar que não pode editar hábitos de dias passados, com opacity 50 e mensagem
  - Criar condição para que ao clicar em datas passadas sem hábitos, ao invés de dizer que não pode editar hábitos em datas passadas, dizer que não haviam sido criados hábitos para esse dia até essa data
+ - Implementar alerta (não um alert(), um componente do radix) ao tentar criar hábito sem descrição e dias marcados
+ - (Talvez fazer) Internacionalização: Permitir troca de linguagem para Inglês, criando arquivos lang para substituir os textos fixos da aplicação
 
 ### Levando o projeto para o próximo nível
     Itens que o Diego disse que seriam bons implementar para levar o projeto para o próximo nível, treinar mais afundo e diferenciar o projeto desenvolvido do de outras pessoas.

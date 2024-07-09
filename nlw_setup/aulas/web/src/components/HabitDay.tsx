@@ -16,6 +16,9 @@ export function HabitDay({date, defaultCompleted = 0, amountTotal = 0}: HabitDay
 
     const completedPercentage = amountTotal > 0 ? Math.round((amountCompleted / amountTotal) * 100) : 0;
 
+    const today = dayjs().startOf('day').toDate();
+    const isCurrentDay = dayjs(date).isSame(today);
+
     const dayAndMonth = dayjs(date).format('DD/MM');
     const dayOfWeek = dayjs(date).format('dddd');
 
@@ -23,8 +26,6 @@ export function HabitDay({date, defaultCompleted = 0, amountTotal = 0}: HabitDay
         setAmountCompleted(completed);
     }
 
-    //Se não fizerem, criar condição para destacar o dia atual e também quando todos os hábitos forem completos, como fiz no mobile
-    //Procurar exatamente qual seria a tonalidade para "Ouro"
     //Também tentar colocar ScrollView ao redor do componente <HabitsList />, pois com muitos hábitos, sai da tela
     //Tentar jogar todas as propriedades de focus em uma propriedade só, pois estão se repetindo muito no código:
     // (focus:outline-none - nos checkboxes ela não é usada) focus:ring-2 focus:ring-violet-600 focus:ring-offset-2 focus:ring-offset-background
@@ -40,7 +41,8 @@ export function HabitDay({date, defaultCompleted = 0, amountTotal = 0}: HabitDay
                 "bg-violet-700 border-violet-500": completedPercentage >= 40 && completedPercentage < 60,
                 "bg-violet-600 border-violet-500": completedPercentage >= 60 && completedPercentage < 80,
                 "bg-violet-500 border-violet-400": completedPercentage >= 80 && completedPercentage < 100,
-                "bg-yellow-600 border-yellow-700": completedPercentage === 100
+                "bg-yellow-600 border-yellow-700": completedPercentage === 100,
+                "border-white border-4": isCurrentDay
             })} />
 
             <Popover.Portal>
