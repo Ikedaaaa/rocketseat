@@ -1,0 +1,25 @@
+I didn't run
+'npx expo run:android'
+because I don't have the Android SDK installed in my computer;
+
+I just ran
+npx expo prebuild
+
+On
+npx expo run:android
+It started with a bunch of errors of
+"Error: could not connect to TCP port 5554: cannot connect to 127.0.0.1:5554:..."
+
+Running the command again the error didn't happen anymore (?)
+But then, the error was:
+'Android Gradle plugin requires Java 17 to run. You are currently using Java 11'
+Solved by
+'changing `org.gradle.java.home` in `gradle.properties`.'
+pointing to a jdk 17.
+
+Then the error was:
+'SDK location not found. Define a valid SDK location with an ANDROID_HOME environment variable
+or by setting the sdk.dir path in your project's local properties file at...'
+
+And all this happened because:
+'npx expo run:android requires Android Studio and Java to be installed and configured on your computer.'
