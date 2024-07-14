@@ -1,15 +1,16 @@
-import "@/styles/global.css"
-import { View, StatusBar } from "react-native"
-import { Slot } from "expo-router"
+import "@/styles/global.css";
+import "@/utils/dayjsLocaleConfig";
+import { View, StatusBar } from "react-native";
+import { Slot } from "expo-router";
 
-import { Loading } from "@/components/loading"
+import { Loading } from "@/components/loading";
 
 import {
     useFonts,
     Inter_500Medium,
     Inter_400Regular,
     Inter_600SemiBold
-} from "@expo-google-fonts/inter"
+} from "@expo-google-fonts/inter";
 
 export default function Layout() {
     const [fontsLoaded] = useFonts({
